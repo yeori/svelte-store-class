@@ -2,7 +2,7 @@
 	"name": "svelte-store-class",
 	"description": "It provides a svelte store wrapper which fully encapsulates data using class form.",
 	"license": "MIT",
-	"version": "0.0.1-alpha1",
+	"version": "0.0.1-alpha2",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
