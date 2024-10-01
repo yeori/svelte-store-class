@@ -4,7 +4,7 @@
 	"license": "MIT",
 	"version": "0.0.1-alpha2",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite dev --mode development",
 		"build": "vite build && npm run package",
 		"preview": "vite preview",
 		"package": "svelte-kit sync && svelte-package && publint",

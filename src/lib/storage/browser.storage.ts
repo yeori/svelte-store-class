@@ -1,4 +1,4 @@
-export interface WebStorage {
+export interface IStorage {
 	get<T>(key: string, alterative?: T): T | undefined;
 	/**
 	 * save `{key, value}` into storage. `value` is serialized.
@@ -6,14 +6,18 @@ export interface WebStorage {
 	 * @param value
 	 * @param overwrite if true, ovewrites existing value, otherwise throw error when key exists
 	 */
-	set<T>(key: string, value: T, overwrite: boolean): WebStorage;
+	set<T>(key: string, value: T, overwrite?: boolean): IStorage;
 	has(key: string): boolean;
 	remove(keys: string | string[]): void;
 }
 
-export class WebStorageWrapper implements WebStorage {
+export class StorageWrapper implements IStorage {
 	constructor(readonly target: Storage) {}
-	get<T>(key: string, alternateValue?: T, parseJson: boolean = true): T | undefined {
+	get<T>(
+		key: string,
+		alternateValue?: T,
+		parseJson: boolean = true
+	): T | undefined {
 		const value = this.target.getItem(key);
 		if (value) {
 			return parseJson ? JSON.parse(value) : value;
@@ -33,8 +37,8 @@ export class WebStorageWrapper implements WebStorage {
 				`cannot overwite existing value for key [${key}], or use set(key, value, true) to overwrite the item.`
 			);
 		}
-		const jsonText = value ? JSON.stringify(value) : '{}';
-		this.target.setItem(key, jsonText);
+		const serialized = JSON.stringify(value);
+		this.target.setItem(key, serialized);
 		return this;
 	}
 	has(key: string): boolean {
@@ -45,6 +49,3 @@ export class WebStorageWrapper implements WebStorage {
 		ks.forEach((key) => this.target.removeItem(key));
 	}
 }
-
-export const session = new WebStorageWrapper(sessionStorage);
-export const local = new WebStorageWrapper(localStorage);
