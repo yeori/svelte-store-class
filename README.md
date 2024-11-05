@@ -1,7 +1,3 @@
-Here is the English translation:
-
----
-
 # Svelte Store Class
 
 It provides a wrapper for Svelte store.
