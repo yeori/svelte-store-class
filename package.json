@@ -2,7 +2,7 @@
 	"name": "svelte-store-class",
 	"description": "It provides a svelte store wrapper which fully encapsulates data inside class.",
 	"license": "MIT",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"bugs": {
 		"url": "https://github.com/yeori/svelte-store-class/issues",
 		"email": "yeori.seo@gmail.com"
