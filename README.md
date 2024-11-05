@@ -2,6 +2,12 @@
 
 It provides a wrapper for Svelte store.
 
+## Installation
+
+```
+npm install svelte-store-class
+```
+
 ## Example
 
 This is a simple example of a **store class for a todo app**
