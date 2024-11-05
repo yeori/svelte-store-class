@@ -1,8 +1,24 @@
 {
 	"name": "svelte-store-class",
-	"description": "It provides a svelte store wrapper which fully encapsulates data using class form.",
+	"description": "It provides a svelte store wrapper which fully encapsulates data inside class.",
 	"license": "MIT",
 	"version": "0.0.1-alpha4",
+	"bugs": {
+		"url": "https://github.com/yeori/svelte-store-class/issues",
+		"email": "yeori.seo@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yeori/svelte-store-class.git"
+	},
+	"keywords": [
+		"svelte",
+		"svelte/store"
+	],
+	"author": {
+		"name": "yeori",
+		"email": "yeori.seo@gmail.com"
+	},
 	"scripts": {
 		"dev": "vite dev --mode development",
 		"build": "vite build && npm run package",
